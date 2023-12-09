@@ -1,0 +1,20 @@
+{
+  "profile1": {
+    "canvas_key": "<KEY>",
+    "canvas_URL": "<URL>",
+    "notion_database_ID": "<DATABASE_ID>",
+    "notion_token": "<TOKEN>"
+  },
+  "profile2": {
+    "canvas_key": "<KEY>",
+    "canvas_URL": "<URL>",
+    "notion_database_ID": "<DATABASE_ID>",
+    "notion_token": "<TOKEN>"
+  },
+  "profile3": {
+    "canvas_key": "<KEY>",
+    "canvas_URL": "<URL>",
+    "notion_database_ID": "<DATABASE_ID>",
+    "notion_token": "<TOKEN>"
+  }
+}
