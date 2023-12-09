@@ -4,6 +4,7 @@
 ## General Instructions  
 1. Download the folder  
 2. Follow setup instructions below  
+3. Run the Python script every time you want to update the database  
 
 **Notes**  
 - If the files are still in a folder together and the preferences are set up correctly, you should just be able to run the Python script and it will display your assignments in the Notion database!  
