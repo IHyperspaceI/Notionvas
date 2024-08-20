@@ -21,7 +21,7 @@ with (open(pathToPrefs, "r") as userPrefsFile):
 
 parsed_json = json.loads(preferences)
 
-profile = 0
+profile = 1
 while profile == 0:
 	userInput = input(f"-> {Fore.LIGHTGREEN_EX}Enter profile (1 through 3): {Style.RESET_ALL}")
 	try:
@@ -290,11 +290,13 @@ print(f"-- {Fore.LIGHTGREEN_EX}Getting assignments...{Style.RESET_ALL}")
 
 for course in courses:
 	print(f"-- {Fore.BLUE}" + course[0] + f"{Style.RESET_ALL}")
+	totalCoursePoints = 0
+
 	for assignment in course[1].get_assignments(
 			bucket="unsubmitted"):  # Bucket types: past, overdue, undated, ungraded, unsubmitted, upcoming, future
 		assignmentName = assignment.name
 		assignmentClass = course[0]
-		assignmentDate = "2025-01-01T05:59:59Z"
+		assignmentDate = "2026-01-01T05:59:59Z"
 		assignmentCompleted = False
 		assignmentUpdate = True
 		assignmentPoints = 0
@@ -309,6 +311,7 @@ for course in courses:
 
 		if hasattr(assignment, "points_possible"):
 			assignmentPoints = int(assignment.points_possible)
+			totalCoursePoints += assignmentPoints
 		else:
 			print(f"-- {Fore.LIGHTRED_EX}No points for {Style.RESET_ALL}" + assignmentName + "!")
 
@@ -353,6 +356,7 @@ for course in courses:
 					                               False, True)
 		except:
 			print(f"-> {Fore.LIGHTRED_EX}Failed to create{Style.RESET_ALL} {assignmentName}!")
+	print(f"-> {Fore.LIGHTGREEN_EX}Total course points: {Style.RESET_ALL}" + str(totalCoursePoints))
 
 # due_at_date: 2023-10-07 05:59:59+00:00
 # due_at: 2023-10-07T05:59:59Z
